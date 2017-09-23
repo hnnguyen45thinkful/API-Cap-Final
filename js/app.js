@@ -48,7 +48,7 @@ var getRecipe = function(keyword,cuisine,allergy) {
 <div class="recipe-description">
     <div class="recipeName">
                 <h2 id="recipeName">  
-        <a target="_blank" href="https://www.yummly.com/recipe/" + ${matches.id}>
+                <a target="_blank" href="https://www.yummly.com/recipe/${matches.id}">
         ${matches.recipeName}
         </a>
         </h2>
