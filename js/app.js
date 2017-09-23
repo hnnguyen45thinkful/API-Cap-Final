@@ -48,11 +48,8 @@ var getRecipe = function(keyword,cuisine,allergy) {
 <div class="recipe-description">
     <div class="recipeName">
                 <h2 id="recipeName">  
-<<<<<<< HEAD
         <a target="_blank" href="https://www.yummly.com/recipe/${matches.id}">
-=======
                 <a target="_blank" href="https://www.yummly.com/recipe/${matches.id}">
->>>>>>> 9408a09841f4907680aad607d2c3e49ae3341068
         ${matches.recipeName}
         </a>
         </h2>
