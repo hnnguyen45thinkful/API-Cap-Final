@@ -22,6 +22,7 @@ var recipeValidation = function(keyword,cuisine,allergy) {
 	    $('.recipe-details').html('');
 	    return false;
 	} else {
+		$('#searchButton').html('Loading...');
 		getRecipe(keyword,cuisine,allergy);
 	}
 }
@@ -48,6 +49,7 @@ var getRecipe = function(keyword,cuisine,allergy) {
 <div class="recipe-description">
     <div class="recipeName">
                 <h2 id="recipeName">  
+        <a target="_blank" href="https://www.yummly.com/recipe/${matches.id}">
                 <a target="_blank" href="https://www.yummly.com/recipe/${matches.id}">
         ${matches.recipeName}
         </a>
@@ -63,10 +65,12 @@ var getRecipe = function(keyword,cuisine,allergy) {
 
             $('.recipe-details').append(recipe);
 		});
+		$('#searchButton').html('Search');
 	})
 	.fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
 		$('.search-results').append(errorElem);
+		$('#searchButton').html('Search');
 	});
 }
 
