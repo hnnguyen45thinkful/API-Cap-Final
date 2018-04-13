@@ -22,6 +22,7 @@ var recipeValidation = function(keyword,cuisine,allergy) {
 	    $('.recipe-details').html('');
 	    return false;
 	} else {
+		$('#searchButton').html('Loading...');
 		getRecipe(keyword,cuisine,allergy);
 	}
 }
@@ -64,10 +65,12 @@ var getRecipe = function(keyword,cuisine,allergy) {
 
             $('.recipe-details').append(recipe);
 		});
+		$('#searchButton').html('Search');
 	})
 	.fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
 		$('.search-results').append(errorElem);
+		$('#searchButton').html('Search');
 	});
 }
 
